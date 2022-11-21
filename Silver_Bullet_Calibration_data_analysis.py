@@ -4,6 +4,8 @@ import statistics
 import scipy.special
 from sklearn.metrics import r2_score
 import time
+import os
+import sys
 
 ##FUNCTIONS
 
@@ -212,10 +214,11 @@ def Plot_raw(year):
         count+=1
         snr.append(statistics.mean(abscal_c)/statistics.mean(bg_c))
     plt.grid()
-    plt.legend(prop={'size': 15},loc='center left', bbox_to_anchor=(1, 0.5))
+    plt.legend()
+    #plt.legend(prop={'size': 15},loc='center left', bbox_to_anchor=(1, 0.5))
     #plt.title("Values filtered with Peirce's criterion")
-    plt.xlabel('Wavelength [Å]',fontsize=20)
-    plt.ylabel('C [R/Å/CTS]',fontsize=20)
+    plt.xlabel('Wavelength [Å]',fontsize=15)
+    plt.ylabel('C [R/Å/CTS]',fontsize=15)
     plt.figure(2)
     plt.scatter(year,snr,color='black')
     plt.xlabel("years")
@@ -532,69 +535,69 @@ r=2
 rho=0.98
 scanning_wl=np.linspace(scan_start,scan_stop,nb_scan,True)
 
-path_data_2011_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2011\\s0202112_background_for_abs.lyr")
-path_data_2011_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2011\\s0202112_abscal.lyr")
-path_cal_2011="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2011\\Wavelength.Cal"
+path_data_2011_bg=os.path.join(sys.path[0],"2011/s0202112_background_for_abs.lyr")
+path_data_2011_abs=os.path.join(sys.path[0],"2011/s0202112_abscal.lyr")
+path_cal_2011=os.path.join(sys.path[0],"2011/Wavelength.Cal")
 R_2011=51.85 #m
 a_2011=44 #deg
 
-path_data_2013_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2013\\s0602132Silver_BG.lyr")
-path_data_2013_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2013\\s0602132Silver_ABS.lyr")
-path_cal_2013="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2013\\Wavelength.Cal"
+path_data_2013_bg=os.path.join(sys.path[0],"2013/s0602132Silver_BG.lyr")
+path_data_2013_abs=os.path.join(sys.path[0],"2013/s0602132Silver_ABS.lyr")
+path_cal_2013=os.path.join(sys.path[0],"2013/Wavelength.Cal")
 R_2013=52.05 #m
 a_2013=43.5 #deg
 
-path_data_2014_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2014\\silver_Background_0502142.lyr")
-path_data_2014_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2014\\silver_ABS_CAL_0502142.lyr")
-path_cal_2014="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2014\\Wavelength.Cal"
+path_data_2014_bg=os.path.join(sys.path[0],"2014/silver_Background_0502142.lyr")
+path_data_2014_abs=os.path.join(sys.path[0],"2014/silver_ABS_CAL_0502142.lyr")
+path_cal_2014=os.path.join(sys.path[0],"2014/Wavelength.Cal")
 R_2014=51.87 #m
 a_2014=45 #deg
 
-path_data_2015_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2015\\s1202152BackgroundScans.lyr")
-path_data_2015_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2015\\s1202152ABS_CAL.lyr")
-path_cal_2015="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2015\\Wavelength.Cal"
+path_data_2015_bg=os.path.join(sys.path[0],"2015/s1202152BackgroundScans.lyr")
+path_data_2015_abs=os.path.join(sys.path[0],"2015/s1202152ABS_CAL.lyr")
+path_cal_2015=os.path.join(sys.path[0],"2015/Wavelength.Cal")
 R_2015=51.88 #m
 a_2015=46 #deg
 
-path_data_2016_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2016\\Back_10022016_silver_s1002161.lyr")
-path_data_2016_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2016\\ABS_CAL_10022016_silver_s1002161.lyr")
-path_cal_2016="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2016\\Wavelength.Cal"
+path_data_2016_bg=os.path.join(sys.path[0],"2016/Back_10022016_silver_s1002161.lyr")
+path_data_2016_abs=os.path.join(sys.path[0],"2016/ABS_CAL_10022016_silver_s1002161.lyr")
+path_cal_2016=os.path.join(sys.path[0],"2016/Wavelength.Cal")
 R_2016=51.93 #m
 a_2016=45 #deg
 
-path_data_2017_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2017\\s0102172_BACKGROUND.lyr")
-path_data_2017_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2017\\s0102172_ABS_CAL.lyr")
-path_cal_2017="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2017\\Wavelength.Cal"
+path_data_2017_bg=os.path.join(sys.path[0],"2017/s0102172_BACKGROUND.lyr")
+path_data_2017_abs=os.path.join(sys.path[0],"2017/s0102172_ABS_CAL.lyr")
+path_cal_2017=os.path.join(sys.path[0],"2017/Wavelength.Cal")
 R_2017=51.974 #m
 a_2017=44 #deg
 
-path_data_2018_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2018\\s0802182_BACKGROUND.lyr")
-path_data_2018_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2018\\s0802182_ABS_CAL.lyr")
-path_cal_2018="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2018\\Wavelength.Cal"
+path_data_2018_bg=os.path.join(sys.path[0],"2018/s0802182_BACKGROUND.lyr")
+path_data_2018_abs=os.path.join(sys.path[0],"2018/s0802182_ABS_CAL.lyr")
+path_cal_2018=os.path.join(sys.path[0],"2018/Wavelength.Cal")
 R_2018=51.92 #m
 a_2018=44 #deg
 
-path_data_2019_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2019\\DARK_SCAN_ABS_CAL_s0702192.lyr")
-path_data_2019_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2019\\ABS_CALs0702192.lyr")
-path_cal_2019="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2019\\Wavelength.Cal"
+path_data_2019_bg=os.path.join(sys.path[0],"2019/DARK_SCAN_ABS_CAL_s0702192.lyr")
+path_data_2019_abs=os.path.join(sys.path[0],"2019/ABS_CALs0702192.lyr")
+path_cal_2019=os.path.join(sys.path[0],"2019/Wavelength.Cal")
 R_2019=52.02 #m
 a_2019=45.2 #deg
 
-path_data_2020_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2020\\s2002202_CAL_BACKGROUND.lyr")
-path_data_2020_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2020\\s2002202_ABS_cal.lyr")
-path_cal_2020="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2020\\Wavelength.Cal"
+path_data_2020_bg=os.path.join(sys.path[0],"2020/s2002202_CAL_BACKGROUND.lyr")
+path_data_2020_abs=os.path.join(sys.path[0],"2020/s2002202_ABS_cal.lyr")
+path_cal_2020=os.path.join(sys.path[0],"2020/Wavelength.Cal")
 R_2020=51.98 #m
 a_2020=45 #deg
 
-path_data_2021_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2021\\s1802212_BG_AbsCal.lyr")
-path_data_2021_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2021\\s1802212_ABS_cal.lyr")
-path_cal_2021="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2021\\Wavelength.Cal"
+path_data_2021_bg=os.path.join(sys.path[0],"2021/s1802212_BG_AbsCal.lyr")
+path_data_2021_abs=os.path.join(sys.path[0],"2021/s1802212_ABS_cal.lyr")
+path_cal_2021=os.path.join(sys.path[0],"2021/Wavelength.Cal")
 R_2021=51.95 #m
 a_2021=45.5 #deg
 
-path_data_2022_bg=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2022\\s1002222_BG_AbsCal.lyr")
-path_data_2022_abs=("C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2022\\s1002222_ABS_cal.lyr")
-path_cal_2022="C:\\Users\\rapha\\iCloudDrive\\Svalbard 2022\\Internship\\Data\\2022\\Wavelength.Cal"
+path_data_2022_bg=os.path.join(sys.path[0],"2022/s1002222_BG_AbsCal.lyr")
+path_data_2022_abs=os.path.join(sys.path[0],"2022/s1002222_ABS_cal.lyr")
+path_cal_2022=os.path.join(sys.path[0],"2022/Wavelength.Cal")
 R_2022=51.96 #m
 a_2022=45  #deg
 
