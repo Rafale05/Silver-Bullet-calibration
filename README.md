@@ -6,4 +6,3 @@ The folders named with a year should contain 3 files : calibration, BG scan, ABS
 
 To analyse new data, please read the tutorial in Appendix A3 of the Silver Bullet calibration data analysis report : http://kho.unis.no/doc/Silver_Bullet_Calibration_report.pdf
 
-If any question, contact raphael.deirmendjian@hotmail.fr
